@@ -1,0 +1,2 @@
+# massa-node-script
+Bash
