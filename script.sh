@@ -7,6 +7,7 @@ echo "Massa - Create a Node"
 echo "*********************"
 sleep 5
 
+# server update and port settings
 sudo apt update
 sudo ufw enable
 sudo ufw allow 22
@@ -21,6 +22,7 @@ echo "--------------------- Düğüm yükleniyor..."
 echo "---------------------"
 sleep 5
 
+# required libraries
 sudo apt install pkg-config curl git build-essential libssl-dev libclang-dev
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
@@ -32,6 +34,7 @@ rustc --version
 git clone --branch testnet https://github.com/massalabs/massa.git
 sudo apt install make clang pkg-config libssl-dev
 
+# settings file
 echo "---------------------"
 echo "Düğüm yüklendi... dosyalar oluşturuluyor lütfen bekleyin"
 echo "---------------------"
@@ -41,6 +44,8 @@ echo "------------------------------"
 echo " Sunucu ip adresini giriniz :"
 read ipadr
 echo -e "[network] \nroutable_ip = '$ipadr' \n" >> massa/massa-node/config/config.toml
+
+# reboot to take effect
 
 echo "Routable dosyası oluşturuldu, ayarların geçerli olabilmesi için sunucu yeniden başlatılıyor..."
 sleep 3
