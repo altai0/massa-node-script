@@ -39,8 +39,8 @@ echo "------------------------------"
 echo "------------------------------"
 echo " Sunucu ip adresini giriniz :"
 read ipadr
-echo -e "[network] \nroutable_ip = '$ipadr' \n" >> cd/massa/massa-node/config/config.toml
+echo -e "[network] \nroutable_ip = '$ipadr' \n" >> massa/massa-node/config/config.toml
 
-echo "Routable dosyası oluşturuldu, sunucu yeniden başlatılıyor..."
+echo "Routable dosyası oluşturuldu, ayarların geçerli olabilmesi için sunucu yeniden başlatılıyor..."
 sleep 3
 reboot
