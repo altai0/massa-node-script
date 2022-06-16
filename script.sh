@@ -2,9 +2,9 @@
 
 
 
-echo "*********************"
-echo "Massa - Create a Node"
-echo "*********************"
+echo "*********************---*********************"
+echo "Massa - The decentralized and scaled blockchain"
+echo "*********************---*********************"
 sleep 5
 
 # server update and port settings
