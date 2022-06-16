@@ -1,4 +1,4 @@
-# Easy Massa Node Setup
+# Massa Node Setup
 
 
 install
