@@ -39,8 +39,7 @@ echo "---------------------"
 echo "Düğüm yüklendi... dosyalar oluşturuluyor lütfen bekleyin"
 echo "---------------------"
 sleep 5
-echo "------------------------------"
-echo "------------------------------"
+
 echo " Sunucu ip adresini giriniz :"
 read ipadr
 echo -e "[network] \nroutable_ip = '$ipadr' \n" >> massa/massa-node/config/config.toml
