@@ -30,6 +30,7 @@ rustup default nightly
 rustup default nightly
 rustc --version
 git clone --branch testnet https://github.com/massalabs/massa.git
+sudo apt install make clang pkg-config libssl-dev
 
 echo "---------------------"
 echo "Düğüm yüklendi... dosyalar oluşturuluyor lütfen bekleyin"
