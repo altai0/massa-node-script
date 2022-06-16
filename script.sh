@@ -8,7 +8,7 @@ echo "*********************"
 sleep 5
 
 # server update and port settings
-sudo apt update
+sudo apt-get update -y
 sudo ufw enable
 sudo ufw allow 22
 sudo ufw allow ssh
@@ -23,7 +23,7 @@ echo "---------------------"
 sleep 5
 
 # required libraries
-sudo apt install pkg-config curl git build-essential libssl-dev libclang-dev
+sudo apt install pkg-config curl git build-essential libssl-dev libclang-dev -y
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
 rustc --version
@@ -32,7 +32,7 @@ rustup default nightly
 rustup default nightly
 rustc --version
 git clone --branch testnet https://github.com/massalabs/massa.git
-sudo apt install make clang pkg-config libssl-dev
+sudo apt install make clang pkg-config libssl-dev -y
 
 # settings file
 echo "---------------------"
