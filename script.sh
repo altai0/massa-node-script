@@ -17,8 +17,8 @@ sudo ufw allow 31245/tcp
 sudo ufw status
 
 echo "---------------------"
-echo "--------------------- Portlar ayarlandı"
-echo "--------------------- Düğüm yükleniyor..."
+echo "--------------------- Portlar ayarlandı düğüm yükleniyor..."
+echo "--------------------- Node loading please wait"
 echo "---------------------"
 sleep 5
 
@@ -36,16 +36,17 @@ sudo apt install make clang pkg-config libssl-dev -y
 
 # settings file
 echo "---------------------"
-echo "Düğüm yüklendi... dosyalar oluşturuluyor lütfen bekleyin"
+echo "Düğüm başarıyla yüklendi..."
+echo "Node installed successfully..."
 echo "---------------------"
 sleep 5
 
-echo " Sunucu ip adresini giriniz :"
+echo " Sunucu ip adresini giriniz (Enter your server's ip address) :"
 read ipadr
 echo -e "[network] \nroutable_ip = '$ipadr' \n" >> massa/massa-node/config/config.toml
 
 # reboot to take effect
-
+echo "Restarting the server for the settings to take effect."
 echo "Routable dosyası oluşturuldu, ayarların geçerli olabilmesi için sunucu yeniden başlatılıyor..."
 sleep 3
 reboot
