@@ -29,7 +29,6 @@ source $HOME/.cargo/env
 rustc --version
 rustup toolchain install nightly
 rustup default nightly
-rustup default nightly
 rustc --version
 git clone --branch testnet https://github.com/massalabs/massa.git
 sudo apt install make clang pkg-config libssl-dev -y
