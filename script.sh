@@ -42,7 +42,8 @@ sleep 5
 
 echo " Sunucu ip adresini giriniz (Enter your server's ip address) :"
 read ipadr
-echo -e "[network] \nroutable_ip = '$ipadr' \n" >> massa/massa-node/config/config.toml
+#echo -e "[network] \nroutable_ip = '$ipadr' \n" >> massa/massa-node/config/config.toml
+echo -e '[network]\nroutable_ip = "$ipadr"' >> massa/massa-node/config/config.toml
 
 # reboot to take effect
 echo "Restarting the server for the settings to take effect."
