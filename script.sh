@@ -21,7 +21,7 @@ echo "---------------------"
 echo "--------------------- Portlar ayarlandı düğüm yükleniyor..."
 echo "--------------------- Node loading please wait"
 echo "---------------------"
-sleep 5
+sleep 3
 
 # required libraries
 sudo apt install pkg-config curl git build-essential libssl-dev libclang-dev -y
@@ -39,7 +39,7 @@ echo "---------------------"
 echo "Düğüm başarıyla yüklendi..."
 echo "Node installed successfully..."
 echo "---------------------"
-sleep 5
+sleep 2
 
 echo " Sunucu ip adresini giriniz (Enter your server's ip address) :"
 read ipadr
@@ -49,5 +49,5 @@ echo -e "[network]\nroutable_ip = '$ipadr'" >> massa/massa-node/config/config.to
 # reboot to take effect
 echo "Restarting the server for the settings to take effect."
 echo "Routable dosyası oluşturuldu, ayarların geçerli olabilmesi için sunucu yeniden başlatılıyor..."
-sleep 3
+sleep 2
 reboot
