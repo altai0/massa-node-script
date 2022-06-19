@@ -9,6 +9,7 @@ sleep 5
 
 # server update and port settings
 sudo apt-get update -y
+sudo apt install ufw -y
 sudo ufw enable
 sudo ufw allow 22
 sudo ufw allow ssh
