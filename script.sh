@@ -32,7 +32,11 @@ rustup toolchain install nightly
 rustup default nightly
 rustc --version
 git clone --branch testnet https://github.com/massalabs/massa.git
+
+# rustc explain fixed
 sudo apt install make clang pkg-config libssl-dev -y
+rustup default nightly 
+rustup update
 
 # settings file
 echo "---------------------"
