@@ -8,10 +8,9 @@ sudo git clone https://github.com/altai0/massa-node-script.git && cd massa-node-
 
 Useful links
 
-```
-https://t.me/massa_turkey
-https://medium.com/@altai0
-https://medium.com/@HeiLong
+
+<a>https://t.me/massa_turkey</a>  
+https://medium.com/@altai0  
+https://medium.com/@HeiLong  
 Track your node -> https://t.me/MassaHelperBot
 
-```
