@@ -62,12 +62,12 @@ read walletpassword
 
 # node start
 screen -S massa-node -d -m bash
-screen -r massa-node -X stuff "cd massa/massa-node/ && ./massa-node -p $walletpassword |& tee logs.txt"$(echo -ne '\015')
+screen -r massa-node -X stuff "cd massa/massa-node/ && RUST_BACKTRACE=full cargo run --release -- -p $walletpassword |& tee logs.txt"$(echo -ne '\015')
 echo "${info}INFO${reset}: NODE ${bold}STARTED${reset}."
 
 # client start
 screen -S massa-client -d -m bash
-screen -r massa-client -X stuff "cd massa/massa-client/ && ./massa-client -p $walletpassword"$(echo -ne '\015')
+screen -r massa-client -X stuff "cd massa/massa-client/ && cargo run --release -- -p $walletpassword"$(echo -ne '\015')
 echo "${info}INFO${reset}: CLIENT ${bold}STARTED${reset}."
 
 cat << EOF
