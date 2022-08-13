@@ -11,21 +11,22 @@ reset=$(tput sgr0)
 
 clear;
 echo "*********************---*********************"
-echo "Massa - The decentralized and scaled blockchain"
+echo "*******Altai - Massa Node Installation*******"
 echo "*********************---*********************"
-sleep 4
+sleep 3
 
 # server update and port settings
 sudo apt-get update -y
 sudo apt install ufw -y
-sudo ufw enable
 sudo ufw allow 22
 sudo ufw allow ssh
 sudo ufw allow 31244/tcp
 sudo ufw allow 31245/tcp
-sudo ufw status
+sudo ufw enable
+
 
 clear;
+sudo ufw status
 echo "${info}INFO${reset}: installation is ${bold}set${reset} please wait... "
 
 sleep 5
@@ -48,16 +49,49 @@ rustup update
 # settings file
 clear;
 echo "---------------------"
-echo "${info}INFO${reset}: Node installed ${bold}successfully${reset}..."
+echo "${info}INFO${reset}: Libraries loaded ${bold}successfully${reset}please wait..."
 echo "---------------------"
 sleep 2
 
 echo "Enter your server's ip address :"
 read ipadr
 echo -e "[network]\nroutable_ip = '$ipadr'" >> massa/massa-node/config/config.toml
-#echo -e '[network]\nroutable_ip = "$ipadr"' >> massa/massa-node/config/config.toml
 
-# reboot to take effect
-echo "${info}INFO${reset}: Restarting the server for the settings to take ${bold}effect${reset}..."
+echo "Set node and client password: :"
+read walletpassword
+
+# node start
+screen -S massa-node -d -m bash
+screen -r massa-node -X stuff "cd massa/massa-node/ && ./massa-node -p $walletpassword |& tee logs.txt"$(echo -ne '\015')
+echo "${info}INFO${reset}: NODE ${bold}STARTED${reset}."
+
+# client start
+screen -S massa-client -d -m bash
+screen -r massa-client -X stuff "cd massa/massa-client/ && ./massa-client -p $walletpassword"$(echo -ne '\015')
+echo "${info}INFO${reset}: CLIENT ${bold}STARTED${reset}."
+
+cat << EOF
+                      .*%%#,
+              %%%%%%%%%%%%%%%%%%%%%#*             
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#         
+       .%%%%%%%#    %%%%%%%%%%%    %%%%%%%%       
+     %%%%%%%%%%%%     %#%%%%%     %%%%%%%%%%%(    
+    %%%%%%%%%%%%%%     %%%%%     %%%%%%%%%%%%%#   
+  *%%%%%%%%%%%%%%%%#    ,#     %%%%%%%#%%%%%%%%%  
+ .%%%%%%%%%              #              %%%%%%%%# 
+ %%%%%%%%%%     %%%%%%%%%%%%%%%%%##     %%%%%%%%%#
+.%%%%%%%%%%%#    .%%%%%%%%%%%%%%%     #%%%%%%%%%%#
+%%%%%%%#####%#     %%%%%%%%%%%%%     ########%%%%%
+.%%%%#             %%%%%%%%%%%#%             %%%#%
+ %%%%%%%%%%%%%%%%%    %%%%%%#    #%%%%%%%%%%%%%%%%
+ .%%%%%%%%%%%%%%       #%%##       %%%%%%%%%%%%%% 
+  .#%%%%%%%%%##          #          %%%%%%%%%%%#  
+    %%%%%%%%%     %%%        .%##    *%%%%%%%%%   
+     #%%%%%%#    %%%%%#     %%%%##    %%%%%%#     
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%       
+          /#%%%%%%%%%%%%%%%%%%%%%%%%%%#%          
+              .%%%%%%%%%%%%%%%%%%%%#
+
+EOF
+echo "${info}INFO${reset}: Node and client installed and ${bold}run${reset}... Good luck"
 sleep 5
-reboot
