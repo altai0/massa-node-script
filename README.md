@@ -3,7 +3,7 @@
 
 install
 ```
-sudo git clone https://github.com/altai0/massa-node-script.git && cd massa-node-script && mv script.sh ../ && cd ../ && chmod -R 777 script.sh && rm -r massa-node-script && ./script.sh
+wget https://raw.githubusercontent.com/altai0/massa-node-script/main/script.sh && chmod 777 script.sh && sudo ./script.sh
 ```
 
 Useful links
