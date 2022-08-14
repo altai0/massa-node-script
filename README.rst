@@ -1,4 +1,5 @@
 
+
 Introduction
 ============
 This script reduces the node installation to single code. It auto-generates screens, runs node and client. All that remains is to create a wallet and buy rolls.
