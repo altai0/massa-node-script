@@ -49,7 +49,7 @@ rustup update
 # settings file
 clear;
 echo "---------------------"
-echo "${info}INFO${reset}: Libraries loaded ${bold}successfully${reset}please wait..."
+echo "${info}INFO${reset}: Libraries loaded ${bold}successfully${reset}..."
 echo "---------------------"
 sleep 2
 
