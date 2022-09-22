@@ -60,6 +60,8 @@ echo -e "[network]\nroutable_ip = '$ipadr'" >> massa/massa-node/config/config.to
 echo "Set node and client password: :"
 read walletpassword
 
+sudo apt install screen -y
+
 # node start
 screen -S massa-node -d -m bash
 screen -r massa-node -X stuff "cd massa/massa-node/ && RUST_BACKTRACE=full cargo run --release -- -p $walletpassword |& tee logs.txt"$(echo -ne '\015')
