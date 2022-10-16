@@ -3,9 +3,7 @@ Introduction
 ============
 This script reduces the node installation to single code. It auto-generates screens, runs node and client. All that remains is to create a wallet and buy rolls.
 
-.. image:: https://media.discordapp.net/attachments/914892130273624104/1008317587492454491/unknown.png
-   :target: https://github.com/altai0/massa-node-script/
-   :alt: Massa - Create a Node
+https://medium.com/@altai0/massa-creating-a-node-1065cab11d73
 
 Installing
 ==========  
