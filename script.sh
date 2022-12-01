@@ -43,8 +43,8 @@ git clone --branch testnet https://github.com/massalabs/massa.git
 
 # rustc explain fixed
 sudo apt install make clang pkg-config libssl-dev -y
-rustup default nightly 
-rustup update
+rustup install nightly-2022-11-14
+rustup default nightly-2022-11-14
 
 # settings file
 clear;
