@@ -10,9 +10,12 @@ warn=$(tput setaf 214)
 reset=$(tput sgr0)
 
 clear;
-echo "*********************---*********************"
-echo "*******Altai - Massa Node Installation*******"
-echo "*********************---*********************"
+echo "           _ _        _        __  __                     _   _           _  "
+echo "     /\   | | |      (_)      |  \/  |                   | \ | |         | |     "
+echo "    /  \  | | |_ __ _ _ ______| \  / | __ _ ___ ___  __ _|  \| | ___   __| | ___ "
+echo "   / /\ \ | | __/ _` | |______| |\/| |/ _` / __/ __|/ _` | . ` |/ _ \ / _` |/ _ \ "
+echo "  / ____ \| | || (_| | |      | |  | | (_| \__ \__ \ (_| | |\  | (_) | (_| |  __/ "
+echo " /_/    \_\_|\__\__,_|_|      |_|  |_|\__,_|___/___/\__,_|_| \_|\___/ \__,_|\___| "
 sleep 3
 
 # server update and port settings
@@ -53,12 +56,10 @@ echo "${info}INFO${reset}: Libraries loaded ${bold}successfully${reset}..."
 echo "---------------------"
 sleep 2
 
-echo "Enter your server's ip address :"
-read ipadr
-echo -e "[network]\nroutable_ip = '$ipadr'" >> massa/massa-node/config/config.toml
+read -p 'Set ip address: ' ipadr
+read -p 'Set node password: ' walletpassword
 
-echo "Set node and client password: :"
-read walletpassword
+echo -e "[network]\nroutable_ip = '$ipadr'" >> massa/massa-node/config/config.toml
 
 sudo apt install screen -y
 
@@ -95,5 +96,6 @@ cat << EOF
               .%%%%%%%%%%%%%%%%%%%%#
 
 EOF
-echo "${info}INFO${reset}: Node and client installed and ${bold}run${reset}... Good luck"
-sleep 5
+echo "${info}INFO${reset}: Screens have been created successfully, enter the ${bold}(screen -ls)${reset} command to view them."
+echo "${warn}WARN${reset}: It may take 10-15 minutes to  ${bold}compile${reset}"
+sleep 3
