@@ -10,6 +10,7 @@ warn=$(tput setaf 214)
 reset=$(tput sgr0)
 
 clear;
+echo -e '\e[0;36m'
 cat << EOF
            _ _                     __  __                     _   _           _      
      /\   | | |                   |  \/  |                   | \ | |         | |     
@@ -20,6 +21,8 @@ cat << EOF
                        __/ |                                                         
                       |___/                                                          
 EOF
+echo -e '                                                                           '
+echo -e '\e[0m'
 sleep 3
 
 # server update and port settings
