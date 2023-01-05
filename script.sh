@@ -34,15 +34,10 @@ sudo apt install pkg-config curl git build-essential libssl-dev libclang-dev -y
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
 rustc --version
-rustup toolchain install nightly
-rustup default nightly
+rustup toolchain install nightly-2022-12-24
+rustup default nightly-2022-12-24
 rustc --version
 git clone --branch testnet https://github.com/massalabs/massa.git
-
-# rustc explain fixed
-sudo apt install make clang pkg-config libssl-dev -y
-rustup install nightly-2022-11-14
-rustup default nightly-2022-11-14
 
 # settings file
 clear;
