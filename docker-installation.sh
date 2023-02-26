@@ -1,3 +1,7 @@
+clear;
+echo "Altay - Massa Node Installation (Docker)"
+sleep 3
+
 ### Docker and docker compose prerequisites
 sudo apt install curl
 sudo apt install gnupg
