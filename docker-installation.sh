@@ -26,7 +26,7 @@ services:
     environment:
       - DISCORD=
       - DYNIP=0
-      - WALLETPWD=
+      - WALLETPWD=123123
       - NODE_MAX_RAM=90
       - TARGET_ROLL_AMOUNT=NULL
 
