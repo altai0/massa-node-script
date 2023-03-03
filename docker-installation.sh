@@ -37,7 +37,7 @@ services:
       - DYNIP=0
       - WALLETPWD=123123
       - NODE_MAX_RAM=90
-      - TARGET_ROLL_AMOUNT=NULL
+      - TARGET_ROLL_AMOUNT=1
 
     ports:
      - "31244:31244"
