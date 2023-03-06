@@ -34,11 +34,7 @@ services:
     restart: always
     environment:
       - DISCORD=
-      - DYNIP=0
-      - WALLETPWD=123123
-      - NODE_MAX_RAM=90
-      - TARGET_ROLL_AMOUNT=1
-
+      - WALLETPWD=123massa123
     ports:
      - "31244:31244"
      - "31245:31245"
