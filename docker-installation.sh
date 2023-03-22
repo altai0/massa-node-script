@@ -35,6 +35,7 @@ services:
     environment:
       - DISCORD=
       - WALLETPWD=123massa123
+      - TARGET_ROLL_AMOUNT=1
     ports:
      - "31244:31244"
      - "31245:31245"
