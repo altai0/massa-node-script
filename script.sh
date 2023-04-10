@@ -37,7 +37,10 @@ rustc --version
 rustup toolchain install nightly-2023-02-27
 rustup default nightly-2023-02-27
 rustc --version
-git clone --branch testnet https://github.com/massalabs/massa.git
+
+# From binaries
+wget https://github.com/massalabs/massa/releases/download/TEST.21.0/massa_TEST.21.0_release_linux.tar.gz
+tar -xf massa_TEST.21.0_release_linux.tar.gz
 
 # settings file
 clear;
@@ -47,7 +50,6 @@ echo "---------------------"
 sleep 2
 
 read -p 'Set ip address: ' ipadr
-read -p 'Set node password: ' walletpassword
 
 echo -e "[network]\nroutable_ip = '$ipadr'" >> massa/massa-node/config/config.toml
 
@@ -55,12 +57,12 @@ sudo apt install screen -y
 
 # node start
 screen -S massa-node -d -m bash
-screen -r massa-node -X stuff "cd massa/massa-node/ && RUST_BACKTRACE=full cargo run --release -- -p $walletpassword |& tee logs.txt"$(echo -ne '\015')
+screen -r massa-node -X stuff "cd massa/massa-node/ && sudo ./massa-node"$(echo -ne '\015')
 echo "${info}INFO${reset}: NODE ${bold}STARTED${reset}."
 
 # client start
 screen -S massa-client -d -m bash
-screen -r massa-client -X stuff "cd massa/massa-client/ && cargo run --release -- -p $walletpassword"$(echo -ne '\015')
+screen -r massa-client -X stuff "cd massa/massa-client/ && sudo ./massa-client"$(echo -ne '\015')
 echo "${info}INFO${reset}: CLIENT ${bold}STARTED${reset}."
 
 cat << EOF
@@ -87,5 +89,4 @@ cat << EOF
 
 EOF
 echo "${info}INFO${reset}: Screens have been created successfully, enter the ${bold}(screen -ls)${reset} command to view them."
-echo "${warn}WARN${reset}: It may take 10-15 minutes to  ${bold}compile${reset}"
 sleep 3
