@@ -39,8 +39,8 @@ rustup default nightly-2023-02-27
 rustc --version
 
 # From binaries
-wget https://github.com/massalabs/massa/releases/download/TEST.22.1/massa_TEST.22.1_release_linux.tar.gz
-tar -xf massa_TEST.22.1_release_linux.tar.gz
+wget https://github.com/massalabs/massa/releases/download/TEST.22.2/massa_TEST.22.2_release_linux.tar.gz
+tar -xf massa_TEST.22.2_release_linux.tar.gz
 
 # settings file
 clear;
