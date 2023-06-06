@@ -40,7 +40,7 @@ rustc --version
 
 # From binaries
 wget https://github.com/massalabs/massa/releases/download/TEST.23.0/massa_TEST.23.0_release_linux.tar.gz
-tar -xf massa_TEST.22.2_release_linux.tar.gz
+tar -xf massa_TEST.23.0_release_linux.tar.gz
 
 # settings file
 clear;
