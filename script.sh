@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 bold=$(tput bold)
 underline=$(tput smul)
 italic=$(tput sitm)
