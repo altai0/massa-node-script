@@ -33,6 +33,8 @@ sudo apt install pkg-config curl git build-essential libssl-dev libclang-dev -y
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
 rustc --version
+
+# change later because this old library
 rustup toolchain install nightly-2023-02-27
 rustup default nightly-2023-02-27
 rustc --version
