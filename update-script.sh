@@ -16,8 +16,8 @@ sudo rm script.sh.1
 sudo rm -r massa
 
 
-wget https://github.com/massalabs/massa/releases/download/TEST.24.1/massa_TEST.24.1_release_linux.tar.gz
-tar -zxf massa_TEST.24.1_release_linux.tar.gz
+wget https://github.com/massalabs/massa/releases/download/TEST.25.0/massa_TEST.25.0_release_linux.tar.gz
+tar -zxf massa_TEST.25.0_release_linux.tar.gz
 
 echo "--------"
 echo "Done..."
